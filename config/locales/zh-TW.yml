@@ -29,15 +29,12 @@ zh-TW:
   simple_form:
     placeholders:
       proposal:
-        details: Explain the theme and flow of your talk. What are the intended audience
-          takeaways?
-        pitch: Why is this talk pertinent? What is your involvement in the topic?
+        details: 解釋演講內容的主題和流程。希望聽眾能學到什麼呢？
+        pitch: 為什麼這個演講重要呢？你對這個主題有多少參與呢？
     hints:
       proposal:
-        details: Include any pertinent details such as outlines, outcomes or intended
-          audience.
-        pitch: Explain why this talk should be considered and what makes you qualified
-          to speak on the topic.
+        details: 包含任何重要的細節，像是大綱，結果或是目標聽眾。
+        pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
   submit-a-proposal: 投稿
   Closes at: 截止於
   submit-time-left: 內
@@ -80,11 +77,11 @@ zh-TW:
       this_proposal_has_been_withdra: This proposal has been withdrawn
       more_event_details_available_h: 'More event details available here:'
     index:
-      your_dashboard: Your Dashboard
-      proposals: Proposals
-      you_dont_have_any_proposals: You don't have any proposals.
-      submit_a_proposal: Submit a proposal
-      invitations: Invitations
+      your_dashboard: 儀表板
+      proposals: 投稿
+      you_dont_have_any_proposals: 你還沒有投稿
+      submit_a_proposal: 投稿
+      invitations: 邀請
       '': ")"
     form:
       readme: 閱讀 [說明]( %{link} ) 來增加你的入選機會。 不要輸入任何能讓審稿人認出你來的資訊。 所有的欄位都支援 Github 風味的
