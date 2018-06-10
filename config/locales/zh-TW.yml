@@ -87,7 +87,8 @@ zh-TW:
       edit_proposaltitle_for_event: '編輯 %{event} 的 %{proposaltitle} '
     new:
       new_proposal_for_event: 投稿 %{event}
+
   events:
     show:
-      closed_on: Closed on
-      cfp_stats: CFP Stats
+      closed_on: 截止日期
+      cfp_stats: 投稿狀態
