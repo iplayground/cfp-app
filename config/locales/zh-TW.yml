@@ -12,18 +12,18 @@ zh-TW:
         pitch: 說明
       event:
         guidelines: 說明
-
   simple_form:
     placeholders:
       proposal:
-        details: Explain the theme and flow of your talk. What are the intended audience takeaways?
+        details: Explain the theme and flow of your talk. What are the intended audience
+          takeaways?
         pitch: Why is this talk pertinent? What is your involvement in the topic?
-
     hints:
       proposal:
-        details: Include any pertinent details such as outlines, outcomes or intended audience.
-        pitch: Explain why this talk should be considered and what makes you qualified to speak on the topic.
-
+        details: Include any pertinent details such as outlines, outcomes or intended
+          audience.
+        pitch: Explain why this talk should be considered and what makes you qualified
+          to speak on the topic.
   submit-a-proposal: 投稿
   Closes at: 截止於
   submit-time-left: 內
@@ -73,8 +73,8 @@ zh-TW:
       invitations: Invitations
       '': ")"
     form:
-      readme: '閱讀 [說明]( %{link} ) 來增加你的入選機會。 不要輸入任何能讓審稿人認出你來的資訊。
-      所有的欄位都支援 Github 風味的 Markdown https://help.github.com/articles/github-flavored-markdown'
+      readme: 閱讀 [說明]( %{link} ) 來增加你的入選機會。 不要輸入任何能讓審稿人認出你來的資訊。 所有的欄位都支援 Github 風味的
+        Markdown https://help.github.com/articles/github-flavored-markdown
       guidelines: 說明
       for_review_committee: 給主辦單位
       this_content_will: 這裡的內容
@@ -86,4 +86,8 @@ zh-TW:
     edit:
       edit_proposaltitle_for_event: '編輯 %{event} 的 %{proposaltitle} '
     new:
-      new_proposal_for_event: '投稿 %{event}'
+      new_proposal_for_event: 投稿 %{event}
+  events:
+    show:
+      closed_on: Closed on
+      cfp_stats: CFP Stats

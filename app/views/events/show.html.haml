@@ -8,7 +8,7 @@
   .col-md-8
     .markdown
       - if event.closed?
-        Closed on
+        = t('.closed_on')
         %strong= event.closes_at(:long_with_zone)
       = markdown(event.guidelines)
   .col-md-4
@@ -25,6 +25,6 @@
           = t('to_submit_your_proposal')
     - if event.proposals.count > 5
       .stats
-        %h2 CFP Stats
+        %h2= t('.cfp_stats')
         = pluralize(event.proposals.count, 'proposal')
         = event.line_chart
