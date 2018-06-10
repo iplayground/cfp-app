@@ -1,5 +1,9 @@
 ---
 zh-TW:
+  gender: 性別
+  ethnicity: 種族
+  country: 國家 
+
   activerecord:
     models:
       proposal: 投稿
@@ -12,6 +16,16 @@ zh-TW:
         pitch: 說明
       event:
         guidelines: 說明
+
+      speaker:
+        name: 姓名
+        bio: 自我介紹
+
+      person:
+        name: 姓名
+        bio: 自我介紹
+
+
   simple_form:
     placeholders:
       proposal:
@@ -93,27 +107,25 @@ zh-TW:
       cfp_stats: 投稿狀態
   profiles:
     edit:
-      your_profile: Your Profile
-      this_information_will_be: This information will be
-      hidden: hidden
-      from_the_review_committee_but_: from the review committee, but will be shown
-        on the program if your proposal is accepted.
-      bio_is_limited_to_500_characte: Bio is limited to 500 characters.
-      identity_services: Identity Services
-      email_is_only_used_for_notific: Email is only used for notifications on proposal
-        feedback and acceptance into the program.
+      your_profile: 你的資料
+      this_information_will_be: 這些資訊會對審稿人
+      hidden: 保密
+      from_the_review_committee_but_: 直到你的投稿被接受，在那之後會顯示在議程上。
+      bio_is_limited_to_500_characte: 自我介紹限制在500 字內。
+      identity_services: 認證服務
+      email_is_only_used_for_notific: Email 只會被用來通知投稿回饋和結果
       connected_via_developer: "| Connected via Developer"
       authdeveloper: "/auth/developer"
       connect_via_developer: "| Connect via Developer"
-      connected_via_github: "| Connected via GitHub"
+      connected_via_github: "| 已用 GitHub 登入"
       authgithub: "/auth/github"
-      connect_to_github: "| Connect to GitHub"
-      connected_via_twitter: "| Connected via Twitter"
+      connect_to_github:  "| 用 GitHub 登入"
+      connected_via_twitter: "| 已用 Twitter 登入"
       authtwitter: "/auth/twitter"
-      connect_to_twitter: "| Connect to Twitter"
-      demographics: Demographics
-      this_information_is_entirely: This information is entirely
-      optional: optional
-      and_will_be: and will be
-      from_the_review_committee: from the review committee.
-      save: Save
+      connect_to_twitter: "| 用 Twitter 登入"
+      demographics: 個人資料
+      this_information_is_entirely: 這些資料都是完全
+      optional: 非必要的
+      and_will_be: 而且會被
+      from_the_review_committee: ，審稿人完全看不到。
+      save: 儲存

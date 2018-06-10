@@ -1,9 +1,10 @@
+# coding: utf-8
 require 'digest/md5'
 
 class Person < ActiveRecord::Base
   DEMOGRAPHICS      = [:gender, :ethnicity, :country]
   DEMOGRAPHIC_TYPES = {
-    country: CountrySelect::countries.select{ |k,v| k != 'us'}.values.sort.unshift("United States of America")
+    country: CountrySelect::countries.select{ |k,v| k != 'us' && k != 'tw' }.values.sort.unshift("United States of America").unshift("台灣")
   }
 
   store_accessor :demographics, :gender
