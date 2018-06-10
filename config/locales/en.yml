@@ -26,7 +26,8 @@ en:
   submit-time-left: left
   "to submit your proposal!": to submit your proposal!
 
-  proposal-readme: >
+  proposal:
+    readme: >
       Read the #{link} to maximize
       your chance of approval. Refrain from including any information that
       would allow a reviewer to identify you. All fields support

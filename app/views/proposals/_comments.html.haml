@@ -1,5 +1,5 @@
 - if comments.empty?
-  None
+  = t('.none')
 
 - comments.order(:created_at).each do |comment|
   .comment.markdown{ class: choose_class_for(comment) }
@@ -8,7 +8,7 @@
     - if comment.person.present?
       .meta
         %small{ title: comment.created_at.to_s }
-          #{proposal.has_speaker?(comment.person) ? 'speaker' : comment.person.name} - #{comment.created_at.to_s(:day_at_time)}
+          = t('.proposalhas_speakercommentpers', :proposalhas_speakercommentpers => (proposal.has_speaker?(comment.person) ? 'speaker' : comment.person.name), :commentcreated_atto_sday_at_ti => (comment.created_at.to_s(:day_at_time)))
 
 = form_for comments.new do |f|
   = f.hidden_field :proposal_id
@@ -16,4 +16,4 @@
     = f.text_area :body, class: 'form-control', placeholder: 'Add your comment', rows: 13
   %button.btn.btn-success.save-comment(type="submit")
     %span.glyphicon.glyphicon-ok
-    Comment
+    = t('.comment')

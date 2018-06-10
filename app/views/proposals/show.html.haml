@@ -3,7 +3,6 @@
     .col-md-8
       %h3
         = link_to proposal.event.name, event_path(slug: proposal.event.slug)
-        = ", "
         = proposal.event.start_date.to_s(:month_day_year)
       %h1
         = proposal.title
@@ -14,15 +13,15 @@
             - unless proposal.withdrawn? || proposal.accepted? || proposal.confirmed?
               = link_to edit_proposal_path(slug: event.slug, uuid: proposal), class: 'btn btn-primary' do
                 %span.glyphicon.glyphicon-edit
-                Edit
+                = t('.edit')
               -if proposal.has_reviewer_activity?
                 = proposal.withdraw_button
               -else
                 = link_to proposal_path, method: :delete, data: {confirm: 'This will delete your talk. Are you sure you want to do this? It can not be undone.'}, class: 'btn btn-warning', id: 'delete' do
                   %span.glyphicon.glyphicon-exclamation-sign
-                  Delete Proposal
+                  = t('.delete_proposal')
           %h5.margin-top
-            CFP closes
+            = t('.cfp_closes')
             = event.closes_at(:month_day_year)
   .row
     .col-md-12.tags= proposal.tags
@@ -32,11 +31,11 @@
       = render partial: 'proposals/contents', locals: { proposal: proposal }
 
     .col-md-4
-      %h3 Speakers
+      %h3= t('.speakers')
       = render proposal.speakers
 
       - if (proposal.has_speaker?(current_user))
-        %h3 Invited Speakers
+        %h3= t('.invited_speakers')
         - invitations.each do |invitation|
           .clearfix
             %ul.invitation
@@ -44,12 +43,12 @@
                 = invitation.state_label
                 = invitation.email
                 .pull-right
-                  = link_to 'Resend',
+                  = link_to t('.resend'),
                     resend_invitation_path(invitation_slug: invitation.slug),
                     method: :post,
                     class: 'btn btn-xs btn-primary',
                     disabled: !invitation.pending?
-                  = link_to 'Remove',
+                  = link_to t('.remove'),
                     invitation_path(invitation_slug: invitation.slug),
                     method: :delete,
                     class: 'btn btn-xs btn-danger',
@@ -57,17 +56,17 @@
                     data: {confirm: 'Are you sure you want to remove this invitation?'}
 
         = form_tag invitations_path(proposal_uuid: proposal.uuid), class: 'form-inline speaker' do
-          %h3 Invite a Speaker
+          %h3= t('.invite_a_speaker')
           = email_field_tag :email, '', placeholder: "Enter an email address.", class: 'form-control'
           %button.btn.btn-success(type="submit")
             %span.glyphicon.glyphicon-envelope
-            Invite
+            = t('.invite')
     .col-md-4
-      %h3 Reviewer Activity
+      %h3= t('.reviewer_activity')
       %p
         = pluralize(proposal.ratings.count, 'review')
         = proposal.public_state
 
-      %h3 Comments
+      %h3= t('.comments')
       = render partial: 'proposals/comments',
         locals: { proposal: proposal, comments: proposal.public_comments }
