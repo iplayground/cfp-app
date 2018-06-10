@@ -1,0 +1,25 @@
+
+zh-TW:
+  activerecord:
+    models:
+      proposal: 投稿
+      event: 活動
+    attributes:
+      proposal:
+        title: 標題
+        abstract: 摘要
+        details: 細節
+        pitch: 說明
+      event:
+        guidelines: 說明
+  submit-a-proposal: "投稿"
+  Closes at: "截止於"
+  submit-time-left: left
+
+  proposal-readme: >-
+          Read the %{link} to maximize
+          your chance of approval. Refrain from including any information that
+          would allow a reviewer to identify you. All fields support
+          %a{href: 'https://help.github.com/articles/github-flavored-markdown'}
+          GitHub Flavored Markdown.
+  For Review Committee: For Review Committee
