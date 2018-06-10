@@ -31,10 +31,14 @@ zh-TW:
       proposal:
         details: 解釋演講內容的主題和流程。希望聽眾能學到什麼呢？
         pitch: 為什麼這個演講重要呢？你對這個主題有多少參與呢？
+        title: 演講標題
+        abstract: 你的演講要講什麼呢？
     hints:
       proposal:
         details: 包含任何重要的細節，像是大綱，結果或是目標聽眾。
         pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
+        title: 請限制標題在60 個字以內
+        abstract: 提供一個簡短的內容描述，限制在600 個字以內。
   submit-a-proposal: 投稿
   Closes at: 截止於
   submit-time-left: 內
