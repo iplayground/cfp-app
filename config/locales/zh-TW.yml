@@ -21,6 +21,17 @@ zh-TW:
       person:
         name: 姓名
         bio: 自我介紹
+
+  helpers:
+    placeholder:
+      speaker_fields:
+        bio:  '自我介紹'
+
+    hint:
+      speaker_fields:
+        bio: '自我介紹限制在500字以內'
+
+
   simple_form:
     placeholders:
       proposal:
@@ -34,7 +45,7 @@ zh-TW:
         pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
         title: 請限制標題在60 個字以內
         abstract: 提供一個簡短的內容描述，限制在600 個字以內。
-      person:
+      speaker:
         bio: 請限制在500個字以內。
   submit-a-proposal: 投稿
   Closes at: 截止於
@@ -131,7 +142,7 @@ zh-TW:
     speaker:
       withdraw: Withdraw
     fields:
-      edit_my_profile: Edit my profile
-      this_information_will_be: This information will be
-      hidden: hidden
-      from_the_review_committee: from the review committee.
+      edit_my_profile: 編輯我的資料
+      this_information_will_be: 這些資料會
+      hidden: 保密
+      from_the_review_committee: 審稿人無法看到
