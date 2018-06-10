@@ -3,7 +3,7 @@
 .speaker.clearfix
   = speaker.gravatar
   - if withdraw && speaker.proposal.speakers.count > 1
-    = link_to 'Withdraw',
+    = link_to t('.withdraw'),
       speaker_path(speaker.id),
       method: :delete,
       class: 'btn btn-danger btn-sm pull-right remove-speaker',

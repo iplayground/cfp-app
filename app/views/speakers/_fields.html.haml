@@ -6,13 +6,13 @@
       %h4
         = speaker.name_and_email
         %br
-        .help-block.small Edit my profile
+        .help-block.small= t('.edit_my_profile')
 
     .clearfix
     %p
-      This information will be
-      %strong hidden
-      from the review committee.
+      = t('.this_information_will_be')
+      %strong= t('.hidden')
+      = t('.from_the_review_committee')
 
     = speaker_fields.hidden_field :person_id, value: speaker.person_id
 

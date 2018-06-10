@@ -2,8 +2,7 @@
 zh-TW:
   gender: 性別
   ethnicity: 種族
-  country: 國家 
-
+  country: 國家
   activerecord:
     models:
       proposal: 投稿
@@ -16,16 +15,12 @@ zh-TW:
         pitch: 說明
       event:
         guidelines: 說明
-
       speaker:
         name: 姓名
         bio: 自我介紹
-
       person:
         name: 姓名
         bio: 自我介紹
-
-
   simple_form:
     placeholders:
       proposal:
@@ -39,7 +34,6 @@ zh-TW:
         pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
         title: 請限制標題在60 個字以內
         abstract: 提供一個簡短的內容描述，限制在600 個字以內。
-
       person:
         bio: 請限制在500個字以內。
   submit-a-proposal: 投稿
@@ -123,7 +117,7 @@ zh-TW:
       connect_via_developer: "| Connect via Developer"
       connected_via_github: "| 已用 GitHub 登入"
       authgithub: "/auth/github"
-      connect_to_github:  "| 用 GitHub 登入"
+      connect_to_github: "| 用 GitHub 登入"
       connected_via_twitter: "| 已用 Twitter 登入"
       authtwitter: "/auth/twitter"
       connect_to_twitter: "| 用 Twitter 登入"
@@ -131,5 +125,13 @@ zh-TW:
       this_information_is_entirely: 這些資料都是完全
       optional: 非必要的
       and_will_be: 而且會被
-      from_the_review_committee: ，審稿人完全看不到。
+      from_the_review_committee: "，審稿人完全看不到。"
       save: 儲存
+  speakers:
+    speaker:
+      withdraw: Withdraw
+    fields:
+      edit_my_profile: Edit my profile
+      this_information_will_be: This information will be
+      hidden: hidden
+      from_the_review_committee: from the review committee.
