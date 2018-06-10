@@ -13,16 +13,16 @@
       = markdown(event.guidelines)
   .col-md-4
     - if event.open?
-      %p= link_to 'Submit a proposal', new_proposal_path(slug: event.slug), class: 'btn btn-primary'
+      %p= link_to t('submit-a-proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary'
       - if event.closes_at?
         %p
-          Closes at
+          = t('Closes at')
           %strong= event.closes_at(:long_with_zone)
         %p
           %strong
             = time_ago_in_words(event.closes_at)
-            left
-          to submit your proposal!
+            = t('submit-time-left')
+          = t('to submit your proposal!')
     - if event.proposals.count > 5
       .stats
         %h2 CFP Stats

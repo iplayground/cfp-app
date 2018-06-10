@@ -1,15 +1,11 @@
 .row
   %fieldset.col-md-6
     %p
-      Read the #{link_to 'guidelines', event_path(event.slug)} to maximize
-      your chance of approval. Refrain from including any information that
-      would allow a reviewer to identify you. All fields support
-      %a{href: 'https://help.github.com/articles/github-flavored-markdown'}
-        GitHub Flavored Markdown.
+      = t('proposal-readme', link: link_to('guidelines', event_path(event.slug))).html_safe
     = proposal.title_input(f)
     = proposal.abstract_input(f)
 
-    %h3 For Review Committee
+    %h3 t("For Review Committee")
     %p.help-block
       This content will
       %strong only

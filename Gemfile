@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.5'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'puma', '~> 2.13'
 
 gem 'pg'
@@ -66,4 +67,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'timecop'
   gem 'spring'
+  gem 'haml-i18n-extractor'
 end
