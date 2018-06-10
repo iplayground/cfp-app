@@ -87,8 +87,33 @@ zh-TW:
       edit_proposaltitle_for_event: '編輯 %{event} 的 %{proposaltitle} '
     new:
       new_proposal_for_event: 投稿 %{event}
-
   events:
     show:
       closed_on: 截止日期
       cfp_stats: 投稿狀態
+  profiles:
+    edit:
+      your_profile: Your Profile
+      this_information_will_be: This information will be
+      hidden: hidden
+      from_the_review_committee_but_: from the review committee, but will be shown
+        on the program if your proposal is accepted.
+      bio_is_limited_to_500_characte: Bio is limited to 500 characters.
+      identity_services: Identity Services
+      email_is_only_used_for_notific: Email is only used for notifications on proposal
+        feedback and acceptance into the program.
+      connected_via_developer: "| Connected via Developer"
+      authdeveloper: "/auth/developer"
+      connect_via_developer: "| Connect via Developer"
+      connected_via_github: "| Connected via GitHub"
+      authgithub: "/auth/github"
+      connect_to_github: "| Connect to GitHub"
+      connected_via_twitter: "| Connected via Twitter"
+      authtwitter: "/auth/twitter"
+      connect_to_twitter: "| Connect to Twitter"
+      demographics: Demographics
+      this_information_is_entirely: This information is entirely
+      optional: optional
+      and_will_be: and will be
+      from_the_review_committee: from the review committee.
+      save: Save
