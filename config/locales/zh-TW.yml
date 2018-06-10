@@ -26,7 +26,8 @@ zh-TW:
 
   submit-a-proposal: 投稿
   Closes at: 截止於
-  submit-time-left: left
+  submit-time-left: 內
+  to_submit_your_proposal: 來投稿吧
   proposals:
     preview:
       preview: 預覽
