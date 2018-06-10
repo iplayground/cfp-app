@@ -39,6 +39,9 @@ zh-TW:
         pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
         title: 請限制標題在60 個字以內
         abstract: 提供一個簡短的內容描述，限制在600 個字以內。
+
+      person:
+        bio: 請限制在500個字以內。
   submit-a-proposal: 投稿
   Closes at: 截止於
   submit-time-left: 內
