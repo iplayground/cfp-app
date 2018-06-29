@@ -31,6 +31,7 @@ gem 'simple_form', '3.1.0'
 gem 'zeroclipboard-rails'
 
 gem 'responders', '~> 2.0'
+gem 'meta-tags'
 
 group :production do
   gem 'rails_12factor'

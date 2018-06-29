@@ -183,6 +183,8 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta-tags (2.10.0)
+      actionpack (>= 3.2.0, < 5.3)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
@@ -370,6 +372,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   launchy
+  meta-tags
   omniauth-github
   omniauth-twitter
   pg
