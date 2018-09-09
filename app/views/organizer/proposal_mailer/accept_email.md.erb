@@ -1,14 +1,14 @@
 <% unless @event.accept.blank? %>
-  <%= Organizer::ProposalMailerTemplate.new(@event.accept, @event, @proposal).render %>
- <% else %>
-    Congratulations! We'd love to include your talk, <%= @proposal.title %>, at <%= @event.name %>.
+    <%= Organizer::ProposalMailerTemplate.new(@event.accept, @event, @proposal).render %>
+<% else %>
+    恭喜！<%= @event.name %> 已接受您的投稿，「<%= @proposal.title %>」。
 
-    TO CONFIRM that you're still willing and able to present this talk, please visit the <%= @proposal.confirm_link %> .
+    請點此連結確認您會出席並發表：<%= @proposal.confirm_link %>。
 
-    TO DECLINE (if you're no longer able to give this talk), please visit the <%= @proposal.confirm_link %>, and click the 'Withdraw Proposal' button.
+    如果您無法出席，請點此連結<%= @proposal.confirm_link %>，並點選 'Withdraw Proposal' 按鈕。
 
-    In the meantime, let us know if you have any questions. We're looking forward to seeing you there!
+    如果您有任何問題，請與我們聯絡。期待與您相見！
 
-    The <%= @event.name %> Program Committee
+    <%= @event.name %> 團隊
 
 <% end %>
