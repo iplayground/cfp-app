@@ -7,13 +7,15 @@
     .share.pull-right= event.tweet_button
   .col-md-8
     .markdown
+      %p= link_to t('submit-a-proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary btn-lg'
       - if event.closed?
         = t('.closed_on')
         %strong= event.closes_at(:long_with_zone)
       = markdown(event.guidelines)
+      %p= link_to t('submit-a-proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary btn-lg'
   .col-md-4
     - if event.open?
-      %p= link_to t('submit-a-proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary'
+      %p= link_to t('submit-a-proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary btn-lg'
       - if event.closes_at?
         %p
           = t('Closes at')
