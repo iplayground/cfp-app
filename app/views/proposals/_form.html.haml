@@ -5,12 +5,15 @@
     = proposal.title_input(f)
     = proposal.abstract_input(f)
 
+    = f.input :talk_language, as: :radio_buttons, collection: [['Chinese 中文', 'Chinese 中文'], ['English', 'English']], input_html: { class: 'watched'}
+
     %h3
       = t('.for_review_committee')
     %p.help-block
       = t('.this_content_will')
       %strong= t('.only')
       = t('.be_visible_to_the_review_commi')
+
 
     = f.input :details, input_html: { class: 'watched', rows: 10 }
     = f.input :pitch, input_html: { class: 'watched', rows: 5 }

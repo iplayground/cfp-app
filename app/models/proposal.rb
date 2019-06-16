@@ -16,7 +16,7 @@ class Proposal < ActiveRecord::Base
   has_one :session
   has_one :track, through: :session
 
-  validates :title, :abstract, presence: true
+  validates :title, :abstract, :talk_language, presence: true
 
   # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of 
@@ -91,6 +91,14 @@ class Proposal < ActiveRecord::Base
 
   def slides_url=(slides_url)
     proposal_data[:slides_url] = slides_url
+  end
+
+  def talk_language
+    proposal_data[:talk_language]
+  end
+
+  def talk_language=(talk_language)
+    proposal_data[:talk_language] = talk_language
   end
 
   def custom_fields=(custom_fields)

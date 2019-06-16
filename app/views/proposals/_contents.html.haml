@@ -6,6 +6,10 @@
 .markdown{ data: { 'field-id' => 'proposal_abstract' } }
   = proposal.abstract
 
+%h3= t('.talk_language')
+%p
+  = proposal.proposal_data[:talk_language]
+
 %h3= t('.details')
 .markdown{ data: { 'field-id' => 'proposal_details' } }
   = proposal.details
