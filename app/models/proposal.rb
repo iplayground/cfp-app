@@ -17,6 +17,7 @@ class Proposal < ActiveRecord::Base
   has_one :track, through: :session
 
   validates :title, :abstract, :talk_language, presence: true
+  validates_associated :speakers
 
   # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of 
