@@ -10,6 +10,10 @@
 %p
   = proposal.proposal_data[:talk_language]
 
+%h3= t('.length')
+%p
+  = proposal.proposal_data[:length]
+
 %h3= t('.details')
 .markdown{ data: { 'field-id' => 'proposal_details' } }
   = proposal.details

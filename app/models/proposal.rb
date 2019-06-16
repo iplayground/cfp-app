@@ -16,7 +16,7 @@ class Proposal < ActiveRecord::Base
   has_one :session
   has_one :track, through: :session
 
-  validates :title, :abstract, :talk_language, presence: true
+  validates :title, :abstract, :talk_language, :length, presence: true
   validates_associated :speakers
 
   # This used to be 600, but it's so confusing for users that the browser
@@ -100,6 +100,14 @@ class Proposal < ActiveRecord::Base
 
   def talk_language=(talk_language)
     proposal_data[:talk_language] = talk_language
+  end
+
+  def length
+    proposal_data[:length]
+  end
+
+  def length=(length)
+    proposal_data[:length] = length
   end
 
   def custom_fields=(custom_fields)
