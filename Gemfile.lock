@@ -308,6 +308,7 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    slack-notifier (2.3.2)
     slop (3.6.0)
     spring (1.6.2)
     spring-commands-rspec (1.0.4)
@@ -393,6 +394,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.1)
   simple_form (= 3.1.0)
+  slack-notifier
   spring
   spring-commands-rspec
   timecop

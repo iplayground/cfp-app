@@ -30,5 +30,7 @@ module CFPApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.slack_webhook_url = ENV['SLACK_WEBHOOK_URL']
   end
 end

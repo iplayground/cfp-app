@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require 'slack-notifier'
 
 class Proposal < ActiveRecord::Base
   include Proposal::State
@@ -36,6 +37,7 @@ class Proposal < ActiveRecord::Base
 
 
   before_create :set_uuid
+  after_create :notify_with_slack
   before_update :save_attr_history
   after_save :save_tags, :save_review_tags, :touch_updated_by_speaker_at
 
@@ -203,6 +205,12 @@ class Proposal < ActiveRecord::Base
       Notification.create_for(reviewers, proposal: self,
                               message: "Proposal, #{old_title}, updated [ #{field_names} ]")
     end
+  end
+
+  def notify_with_slack
+    notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url, username: "CFP")
+    msg = Slack::Notifier::Util::LinkFormatter.format("New Proposal: #{title} was submitted #{Rails.application.routes.url_helpers.proposal_url(slug: event.slug, uuid: uuid, host: "cfp.iplayground.io")}")
+    notifier.ping(msg)
   end
 
   def has_reviewer_activity?

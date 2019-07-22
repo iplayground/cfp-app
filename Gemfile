@@ -33,6 +33,7 @@ gem 'zeroclipboard-rails'
 gem 'responders', '~> 2.0'
 gem 'meta-tags'
 gem 'http_accept_language'
+gem 'slack-notifier'
 
 group :production do
   gem 'rails_12factor'
