@@ -10,7 +10,7 @@ class Comment < ActiveRecord::Base
   def notify_with_slack
     return unless public?
     notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url, username: "CFP")
-    msg = Slack::Notifier::Util::LinkFormatter.format("Proposal: #{proposal.title} has new comment #{Rails.application.routes.url_helpers.proposal_url(slug: proposal.event.slug, uuid: proposal.uuid, host: "cfp.iplayground.io")}")
+    msg = Slack::Notifier::Util::LinkFormatter.format("Proposal: #{proposal.title} has new comment #{Rails.application.routes.url_helpers.reviewer_event_proposal_url(slug: proposal.event.slug, uuid: proposal.uuid, host: "cfp.iplayground.io")}")
     notifier.ping(msg)
   end
 

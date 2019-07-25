@@ -208,8 +208,9 @@ class Proposal < ActiveRecord::Base
   end
 
   def notify_with_slack
+    return unless Rails.application.config.slack_webhook_url
     notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url, username: "CFP")
-    msg = Slack::Notifier::Util::LinkFormatter.format("New Proposal: #{title} was submitted #{Rails.application.routes.url_helpers.proposal_url(slug: event.slug, uuid: uuid, host: "cfp.iplayground.io")}")
+    msg = Slack::Notifier::Util::LinkFormatter.format("New Proposal: #{title} was submitted #{Rails.application.routes.url_helpers.reviewer_event_proposal_url(slug: event.slug, uuid: uuid, host: "cfp.iplayground.io")}")
     notifier.ping(msg)
   end
 
