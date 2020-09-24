@@ -1,15 +1,15 @@
-%h1 Your Dashboard
+%h1= t('.your_dashboard')
 .row
   .col-md-8.proposals
-    %h2 Proposals
+    %h2= t('.proposals')
     - if proposals.empty?
-      %h3 You don't have any proposals.
+      %h3= t('.you_dont_have_any_proposals')
     - proposals.each do |event, talks|
       %h3.margin-bottom
         = link_to event.name, event_path(event.slug), class: 'event-title'
         %small= event.status
         - if event.open?
-          = link_to 'Submit a proposal', new_proposal_path(slug: event.slug), class: 'btn btn-primary'
+          = link_to t('.submit_a_proposal'), new_proposal_path(slug: event.slug), class: 'btn btn-primary'
       %ul
         - talks.each do |proposal|
           %li.proposal
@@ -17,15 +17,15 @@
             = proposal.public_state(small: true)
             %p= truncate(proposal.abstract, length: 80)
   .col-md-4.invitations
-    %h2 Invitations
+    %h2= t('.invitations')
     %ul.unstyled
       - invitations.each do |invitation|
         %li
           = invitation.state_label
           = invitation.proposal.title
           - if invitation.pending?
-            (
+            = t('.')
             = invitation.refuse_button(small: true)
-            |
+            = t('.')
             = invitation.accept_button(small: true)
-            )
+            = t('.')

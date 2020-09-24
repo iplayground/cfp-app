@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.5'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'puma', '~> 2.13'
 
 gem 'pg'
@@ -30,6 +31,9 @@ gem 'simple_form', '3.1.0'
 gem 'zeroclipboard-rails'
 
 gem 'responders', '~> 2.0'
+gem 'meta-tags'
+gem 'http_accept_language'
+gem 'slack-notifier'
 
 group :production do
   gem 'rails_12factor'
@@ -66,4 +70,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'timecop'
   gem 'spring'
+  gem 'haml-i18n-extractor'
 end

@@ -1,3 +1,4 @@
+# coding: utf-8
 module ApplicationHelper
 
   def title
@@ -9,12 +10,7 @@ module ApplicationHelper
   end
 
   def demographic_label(demographic)
-    case demographic
-      when :gender then
-        "Gender Identity"
-      else
-        demographic.to_s.titleize
-    end
+    I18n.t(demographic.to_s)
   end
 
   class MarkdownRenderer < Redcarpet::Render::HTML

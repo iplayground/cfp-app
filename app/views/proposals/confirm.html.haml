@@ -3,29 +3,29 @@
     .col-md-12
       %p
       - if current_user.organizer_for_event?(@event)
-        = link_to "Back to Proposal", organizer_event_proposal_path(@proposal.event_id, @proposal.uuid), class: "btn btn-primary"
+        = link_to t('.back_to_proposal'), organizer_event_proposal_path(@proposal.event_id, @proposal.uuid), class: "btn btn-primary"
       - else
-        = link_to "Back to Proposal", proposal_path(slug: proposal.event.slug, uuid: proposal), class: "btn btn-primary"
+        = link_to t('.back_to_proposal'), proposal_path(slug: proposal.event.slug, uuid: proposal), class: "btn btn-primary"
       %h1
-        Confirm
+        = t('.confirm')
         = proposal.title
   .row
     .col-md-8
       - if current_user.organizer_for_event?(@event)
-        %p.help-block Please ensure the information below is correct.
+        %p.help-block= t('.please_ensure_the_information_')
       - else
-        %p.help-block Congratulations! Your talk has been #{proposal.state}. Please ensure the information below is correct.
+        %p.help-block= t('.congratulations_your_talk_has_', :proposalstate => (proposal.state))
 
-      %h3 Abstract
+      %h3= t('.abstract')
       = proposal.abstract
-      %h3 Speakers
+      %h3= t('.speakers')
       = render partial: 'speakers/speaker',
         collection: proposal.speakers, locals: { withdraw: false }
     .col-md-4
       - if proposal.confirmed?
-        %p This proposal was confirmed on #{proposal.confirmed_at}.
+        %p= t('.this_proposal_was_confirmed_on', :proposalconfirmed_at => (proposal.confirmed_at))
       - elsif proposal.withdrawn?
-        %p This proposal has been withdrawn
+        %p= t('.this_proposal_has_been_withdra')
       - else
         = form_tag(set_confirmed_proposal_path(slug: proposal.event.slug, uuid: proposal)) do
           %fieldset
@@ -43,5 +43,5 @@
 
         - if proposal.event.url
           %p.help-block
-            More event details available here:
+            = t('.more_event_details_available_h')
             =link_to( proposal.event.url)

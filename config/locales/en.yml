@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  submit-a-proposal: "Submit a proposal"
+  Closes at: Closes at 
+  submit-time-left: left
+  "to submit your proposal!": to submit your proposal!
+
+  proposal:
+    readme: >
+      Read the #{link} to maximize
+      your chance of approval. Refrain from including any information that
+      would allow a reviewer to identify you. All fields support
+      %a{href: 'https://help.github.com/articles/github-flavored-markdown'}
+      GitHub Flavored Markdown.

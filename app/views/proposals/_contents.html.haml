@@ -1,16 +1,24 @@
-%h3 Title
+%h3= t('.title')
 .markdown{ data: { 'field-id' => 'proposal_title' } }
   = proposal.title
 
-%h3 Abstract
+%h3= t('.abstract')
 .markdown{ data: { 'field-id' => 'proposal_abstract' } }
   = proposal.abstract
 
-%h3 Details
+%h3= t('.talk_language')
+%p
+  = proposal.proposal_data[:talk_language]
+
+%h3= t('.length')
+%p
+  = proposal.proposal_data[:length]
+
+%h3= t('.details')
 .markdown{ data: { 'field-id' => 'proposal_details' } }
   = proposal.details
 
-%h3 Pitch
+%h3= t('.pitch')
 .markdown{ data: { 'field-id' => 'proposal_pitch' } }
   =proposal.pitch
 

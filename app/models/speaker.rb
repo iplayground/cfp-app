@@ -7,7 +7,7 @@ class Speaker < ActiveRecord::Base
 
   delegate :name, :email, :gravatar_hash, to: :person
 
-  validates :bio, length: {maximum: 500}
+  validates :bio, presence: true, length: {maximum: 500}
 
   accepts_nested_attributes_for :person
 

@@ -1,0 +1,148 @@
+---
+zh-TW:
+  gender: 性別
+  ethnicity: 種族
+  country: 國家
+  activerecord:
+    models:
+      proposal: 投稿
+      event: 活動
+    attributes:
+      proposal:
+        title: 標題
+        abstract: 摘要
+        details: 細節
+        pitch: 說明
+      event:
+        guidelines: 說明
+      speaker:
+        name: 姓名
+        bio: 自我介紹
+      person:
+        name: 姓名
+        bio: 自我介紹
+
+  helpers:
+    placeholder:
+      speaker_fields:
+        bio:  '自我介紹'
+
+    hint:
+      speaker_fields:
+        bio: '自我介紹限制在500字以內'
+
+
+  simple_form:
+    placeholders:
+      proposal:
+        details: 解釋演講內容的主題和流程。希望聽眾能學到什麼呢？
+        pitch: 為什麼這個演講重要呢？你對這個主題有多少參與呢？
+        title: 演講標題
+        abstract: 你的演講要講什麼呢？
+    hints:
+      proposal:
+        details: 包含任何重要的細節，像是大綱，結果或是目標聽眾。
+        pitch: 解釋為什麼這個演講應該要被接受，還有為什麼你適合講這個？
+        title: 請限制標題在60 個字以內
+        abstract: 提供一個簡短的內容描述，限制在600 個字以內。
+      speaker:
+        bio: 請限制在500個字以內。
+  submit-a-proposal: 投稿
+  Closes at: 截止於
+  submit-time-left: 內
+  to_submit_your_proposal: 來投稿吧
+  proposals:
+    preview:
+      preview: 預覽
+    show:
+      edit: 編輯
+      delete_proposal: 刪除投稿
+      cfp_closes: 投稿結束
+      speakers: 講者
+      invited_speakers: 邀請講者
+      resend: 重寄
+      remove: 移除
+      invite_a_speaker: 邀請講者
+      invite: 邀請
+      reviewer_activity: 審稿活動
+      comments: 評論
+    contents:
+      title: 標題
+      abstract: 摘要
+      details: 細節
+      pitch: 說明
+    comments:
+      none: None
+      proposalhas_speakercommentpers: '"%{proposalhas_speakercommentpers} - %{commentcreated_atto_sday_at_ti}"'
+      comment: Comment
+    confirmation_notes:
+      none: None
+    confirm:
+      back_to_proposal: Back to Proposal
+      confirm: Confirm
+      please_ensure_the_information_: Please ensure the information below is correct.
+      congratulations_your_talk_has_: '"Congratulations! Your talk has been %{proposalstate}.
+        Please ensure the information below is correct."'
+      abstract: Abstract
+      speakers: Speakers
+      this_proposal_was_confirmed_on: '"This proposal was confirmed on %{proposalconfirmed_at}."'
+      this_proposal_has_been_withdra: This proposal has been withdrawn
+      more_event_details_available_h: 'More event details available here:'
+    index:
+      your_dashboard: 儀表板
+      proposals: 投稿
+      you_dont_have_any_proposals: 你還沒有投稿
+      submit_a_proposal: 投稿
+      invitations: 邀請
+      '': ")"
+    form:
+      readme: 閱讀 [說明]( %{link} ) 來增加你的入選機會。 不要輸入任何能讓審稿人認出你來的資訊。 所有的欄位都支援 Github 風味的
+        Markdown https://help.github.com/articles/github-flavored-markdown
+      guidelines: 說明
+      for_review_committee: 給主辦單位
+      this_content_will: 這裡的內容
+      only: 只會
+      be_visible_to_the_review_commi: 被主辦單位看見。
+      tags: 標籤
+      custom_fields: 自訂欄位
+      submit_proposal: 投稿
+    edit:
+      edit_proposaltitle_for_event: '編輯 %{event} 的 %{proposaltitle} '
+    new:
+      new_proposal_for_event: 投稿 %{event}
+  events:
+    show:
+      closed_on: 截止日期
+      cfp_stats: 投稿狀態
+  profiles:
+    edit:
+      your_profile: 你的資料
+      this_information_will_be: 這些資訊會對審稿人
+      hidden: 保密
+      from_the_review_committee_but_: 直到你的投稿被接受，在那之後會顯示在議程上。
+      bio_is_limited_to_500_characte: 自我介紹限制在500 字內。
+      identity_services: 認證服務
+      email_is_only_used_for_notific: Email 只會被用來通知投稿回饋和結果
+      connected_via_developer: "| Connected via Developer"
+      authdeveloper: "/auth/developer"
+      connect_via_developer: "| Connect via Developer"
+      connected_via_github: "| 已用 GitHub 登入"
+      authgithub: "/auth/github"
+      connect_to_github: "| 用 GitHub 登入"
+      connected_via_twitter: "| 已用 Twitter 登入"
+      authtwitter: "/auth/twitter"
+      connect_to_twitter: "| 用 Twitter 登入"
+      demographics: 個人資料
+      this_information_is_entirely: 這些資料都是完全
+      optional: 非必要的
+      and_will_be: 而且會被
+      from_the_review_committee: "，審稿人完全看不到。"
+      save: 儲存
+  speakers:
+    speaker:
+      withdraw: Withdraw
+    fields:
+      edit_my_profile: 編輯我的資料
+      this_information_will_be: 這些資料會
+      hidden: 保密
+      from_the_review_committee: 審稿人無法看到

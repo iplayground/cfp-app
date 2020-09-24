@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
   layout 'application'
   decorates_assigned :event
 
+  before_action :set_locale
+
+  def set_locale
+    logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+    I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
+    logger.debug "* Locale set to '#{I18n.locale}'"
+  end
+
   private
   def current_user
     @current_user ||= Person.find_by(id: session[:uid])

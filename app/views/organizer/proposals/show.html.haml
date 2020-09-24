@@ -34,8 +34,6 @@
       %h3 Speakers
       %section
         = render partial: 'organizer/proposals/speakers', locals: { speakers: proposal.speakers }
-      %h3 Public Comments
-      = render partial: 'proposals/comments', locals: { proposal: proposal, comments: proposal.public_comments }
     - if proposal.state == 'accepted'
       %h3 Confirmation Notes
       = render partial: 'proposals/confirmation_notes', locals: {proposal: proposal, notes: proposal.confirmation_notes}

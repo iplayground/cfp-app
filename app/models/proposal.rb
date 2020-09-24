@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require 'slack-notifier'
 
 class Proposal < ActiveRecord::Base
   include Proposal::State
@@ -16,7 +17,8 @@ class Proposal < ActiveRecord::Base
   has_one :session
   has_one :track, through: :session
 
-  validates :title, :abstract, presence: true
+  validates :title, :abstract, :talk_language, :length, presence: true
+  validates_associated :speakers
 
   # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of 
@@ -35,6 +37,7 @@ class Proposal < ActiveRecord::Base
 
 
   before_create :set_uuid
+  after_create :notify_with_slack
   before_update :save_attr_history
   after_save :save_tags, :save_review_tags, :touch_updated_by_speaker_at
 
@@ -91,6 +94,22 @@ class Proposal < ActiveRecord::Base
 
   def slides_url=(slides_url)
     proposal_data[:slides_url] = slides_url
+  end
+
+  def talk_language
+    proposal_data[:talk_language]
+  end
+
+  def talk_language=(talk_language)
+    proposal_data[:talk_language] = talk_language
+  end
+
+  def length
+    proposal_data[:length]
+  end
+
+  def length=(length)
+    proposal_data[:length] = length
   end
 
   def custom_fields=(custom_fields)
@@ -186,6 +205,12 @@ class Proposal < ActiveRecord::Base
       Notification.create_for(reviewers, proposal: self,
                               message: "Proposal, #{old_title}, updated [ #{field_names} ]")
     end
+  end
+
+  def notify_with_slack
+    notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url, username: "CFP")
+    msg = Slack::Notifier::Util::LinkFormatter.format("New Proposal: #{title} was submitted #{Rails.application.routes.url_helpers.reviewer_event_proposal_url(event_id: event.id, uuid: uuid, host: "cfp.iplayground.io")}")
+    notifier.ping(msg)
   end
 
   def has_reviewer_activity?
